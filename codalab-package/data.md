@@ -2,7 +2,7 @@
 
 The challenge data for this task can be downloaded from: **TODO: update when live**.
 
-The starting kit notebook for this task is available at: **TODO: update when live**.
+The starting kit notebook for this task is available at: [https://github.com/microsoft/MICO/tree/main/starting-kit](https://github.com/microsoft/MICO/tree/main/starting-kit).
 
 In the starting kit notebook you will find a walk-through of how to load the data and make your first submission. 
 We also provide a library for loading the data with the appropriate splits. This section describes the dataset splits, model training, and answer submission format.
