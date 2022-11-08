@@ -1,0 +1,172 @@
+# Competition YAML file : general challenge definition
+admin_names: micochallenge, gchers, szanella, ahmed.salem
+allow_public_submissions: false
+allow_teams: true
+anonymous_leaderboard: false
+description: The Microsoft Membership Inference Competition (MICO).
+start_date: 2022-11-01 00:00:00+00:00 # YYYY-MM-DD
+competition_docker_image: 'codalab/codalab-legacy:py37'
+disallow_leaderboard_modifying: true
+enable_detailed_results: true
+enable_forum: true
+enable_per_submission_metadata: true
+end_date: null # FIXME
+force_submission_to_leaderboard: true
+has_registration: true
+html:
+  data: data.html
+  evaluation: evaluation.html
+  overview: overview.html
+  terms: terms.html
+image: logo.png
+
+# Phases
+phases:
+  # Development
+  1:
+    color: green
+    description: 'Development phase: submit membership inference predictions for `dev` and `final`.
+      The live scoreboard shows scores on `dev` only.'
+    is_scoring_only: true
+    label: Development
+    max_submissions: 1000
+    max_submissions_per_day: 30
+    max_submission_size: 2 # 2MB. A typical submission is under 1MB
+    phasenumber: 1
+    reference_data: reference_data_dev.zip
+    scoring_program: scoring_program.zip
+    start_date: 2022-11-01 00:00:00+00:00 # YYYY-MM-DD
+    force_best_submission_to_leaderboard: true
+  # Final
+  2:
+    color: purple
+    description: 'Final phase: submissions from the previous phase are automatically
+      migrated and used to compute the score on `final` and determine the final ranking.
+      Final scores are revealed when the organizers make them available.'
+    is_scoring_only: true
+    label: Final
+    max_submissions: 1000
+    max_submissions_per_day: 30
+    max_submission_size: 2 # 2MB. A typical submission is under 1MB
+    phasenumber: 2
+    reference_data: reference_data_final.zip
+    scoring_program: scoring_program.zip
+    start_date:  2023-01-13 12:00:00+00:00 # YYYY-MM-DD
+    force_best_submission_to_leaderboard: true
+show_datasets_from_yaml: true
+title: MICO
+
+# Leaderboard
+leaderboard:
+    leaderboards:
+        Results_rank: &RESULTS_RANK
+            label: Ranking (average TPR@0.1FPR)
+            rank: 1
+        Results_1: &RESULTS_1
+            label: High ε
+            rank: 3
+        Results_2: &RESULTS_2
+            label: No DP
+            rank: 2
+        Results_3: &RESULTS_3
+            label: Low ε
+            rank: 4
+    columns:
+        average_TPR_FPR_1000:
+            leaderboard: *RESULTS_RANK
+            label: Average TPR@0.1FPR across the three scenarios
+            numeric_format: 4
+            rank: 1
+
+        scenario1_TPR_FPR_10:             # This corresponds to 1st value provided by the scoring program
+            leaderboard: *RESULTS_1       # This is a reference to the leaderboard where the column appears
+            label: TPR@0.001FPR           # This is the name of the column
+            numeric_format: 4             # This is the number of decimals
+            rank: 3                       # This is the number of the column (column 1)
+        scenario1_TPR_FPR_100:
+            leaderboard: *RESULTS_1
+            label: TPR@0.01FPR
+            numeric_format: 4
+            rank: 2
+        scenario1_TPR_FPR_1000:
+            leaderboard: *RESULTS_1
+            label: TPR@0.1FPR
+            numeric_format: 4
+            rank: 1                       # Sort by this column primarily
+        scenario1_AUC:
+            leaderboard: *RESULTS_1
+            label: AUC
+            numeric_format: 4
+            rank: 6
+        scenario1_MIA:
+            leaderboard: *RESULTS_1
+            label: MIA
+            numeric_format: 4
+            rank: 7
+        scenario1_accuracy:
+            leaderboard: *RESULTS_1
+            label: Accuracy
+            numeric_format: 4
+            rank: 8
+
+        scenario2_TPR_FPR_10:             # This corresponds to 1st value provided by the scoring program
+            leaderboard: *RESULTS_2       # This is a reference to the leaderboard where the column appears
+            label: TPR@0.001FPR           # This is the name of the column
+            numeric_format: 4             # This is the number of decimals
+            rank: 3                       # This is the number of the column (column 1)
+        scenario2_TPR_FPR_100:
+            leaderboard: *RESULTS_2
+            label: TPR@0.01FPR
+            numeric_format: 4
+            rank: 2
+        scenario2_TPR_FPR_1000:
+            leaderboard: *RESULTS_2
+            label: TPR@0.1FPR
+            numeric_format: 4
+            rank: 1                       # Sort by this column primarily
+        scenario2_AUC:
+            leaderboard: *RESULTS_2
+            label: AUC
+            numeric_format: 4
+            rank: 6
+        scenario2_MIA:
+            leaderboard: *RESULTS_2
+            label: MIA
+            numeric_format: 4
+            rank: 7
+        scenario2_accuracy:
+            leaderboard: *RESULTS_2
+            label: Accuracy
+            numeric_format: 4
+            rank: 8
+
+        scenario3_TPR_FPR_10:             # This corresponds to 1st value provided by the scoring program
+            leaderboard: *RESULTS_3       # This is a reference to the leaderboard where the column appears
+            label: TPR@0.001FPR           # This is the name of the column
+            numeric_format: 4             # This is the number of decimals
+            rank: 3                       # This is the number of the column (column 1)
+        scenario3_TPR_FPR_100:
+            leaderboard: *RESULTS_3
+            label: TPR@0.01FPR
+            numeric_format: 4
+            rank: 2
+        scenario3_TPR_FPR_1000:
+            leaderboard: *RESULTS_3
+            label: TPR@0.1FPR
+            numeric_format: 4
+            rank: 1                       # Sort by this column primarily
+        scenario3_AUC:
+            leaderboard: *RESULTS_3
+            label: AUC
+            numeric_format: 4
+            rank: 6
+        scenario3_MIA:
+            leaderboard: *RESULTS_3
+            label: MIA
+            numeric_format: 4
+            rank: 7
+        scenario3_accuracy:
+            leaderboard: *RESULTS_3
+            label: Accuracy
+            numeric_format: 4
+            rank: 8
