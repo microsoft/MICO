@@ -1,6 +1,6 @@
 # MICO
 
-Welcome to the Microsoft Membership Inference Competition (MICO)! 
+Welcome to the Microsoft Membership Inference Competition (MICO)!
 In this competition, you will evaluate the effectiveness of differentially private model training as a mitigation against white-box membership inference attacks.
 
 
@@ -11,9 +11,9 @@ The goal of a membership inference attack is to infer whether a given record was
 An attacker might have full access to the model and its weights (known as "white-box" access), or might only be able to query the model on inputs of their choice ("black-box" access).
 In either case, a successful membership inference attack could have negative consequences, especially if the model was trained on sensitive data.
 
-Membership inference attacks vary in complexity. 
+Membership inference attacks vary in complexity.
 In a simple case, the model might have overfitted to its training data, so that it outputs higher confidence predictions when queried on training records than when queried on records that the model has not seen during training.
-Recognizing this, an attacker could simply query the model on records of their interest, establish a threshold on the model's confidence, and infer that records with higher confidence are likely members of the training data. 
+Recognizing this, an attacker could simply query the model on records of their interest, establish a threshold on the model's confidence, and infer that records with higher confidence are likely members of the training data.
 In a white-box setting, as is the case for this competition, the attacker can use more sophisticated strategies that exploit access to the internals of the model.
 
 
@@ -23,8 +23,8 @@ In MICO, your goal is to perform white-box membership inference against a series
 Specifically, given a model and a set of *challenge points*, the aim is to decide which of these challenge points were used to train the model.
 
 You can compete on any of four separate membership inference tasks against classification models for image, text, and tabular data, as well as on a special _Differential Privacy Distinguisher_ task spanning all 3 modalities.
-Each task will be scored separately. 
-You do not need to participate in all of them, and can choose to participate in as many as you like. 
+Each task will be scored separately.
+You do not need to participate in all of them, and can choose to participate in as many as you like.
 Throughout the competition, submissions will be scored on a subset of the evaluation data and ranked on a live scoreboard.
 When submission closes, the final scores will be computed on a separate subset of the evaluation data.
 
@@ -43,7 +43,7 @@ All scenarios share the same model architecture and are trained for the same num
 The $\varepsilon = \infty$ scenario uses Stochastic Gradient Descent (SGD) without any differential privacy guarantee, while the high $\varepsilon$ and low $\varepsilon$ scenarios use Differentially-Private SGD with a high and low privacy budget $\varepsilon$, respectively.
 The lower the privacy budget $\varepsilon$, the more _private_ the model.
 
-In the fourth task, the target models span all three modalities (image, text, and tabular data) and are trained with a low privacy budget. 
+In the fourth task, the target models span all three modalities (image, text, and tabular data) and are trained with a low privacy budget.
 The model architectures and hyperparameters are the same as for first three tasks.
 However, we reveal the training data of models except for the `m/2` member challenge points.
 
@@ -90,9 +90,9 @@ You are allowed to make multiple submissions, but only your latest submission wi
 In order for a submission to be valid, you must submit confidence values for all challenge points in all three scenarios of the task.
 
 Hints and tips:
-- We do realize that the score of a submission leaks some information about the ground truth. 
-However, using this information to optimize a submission based only on the live scoreboard (i.e., on `dev`) is a bad strategy, as this score has no relevance on the final ranking. 
-- Pay a special attention to the evaluation metric (`TPR @ 0.1 FPR`). 
+- We do realize that the score of a submission leaks some information about the ground truth.
+However, using this information to optimize a submission based only on the live scoreboard (i.e., on `dev`) is a bad strategy, as this score has no relevance on the final ranking.
+- Pay a special attention to the evaluation metric (`TPR @ 0.1 FPR`).
 Your average accuracy at predicting membership in general may be misleading. Your attack should aim to maximize the number of predicted members whilst remaining below the specified FPR.
 
 
@@ -122,10 +122,10 @@ For each task, the winner will be the one achieving the highest average score (`
 ## Getting Started
 
 First, register on CodaLab for the tasks in which you would like to participate:
-- Images (`CIFAR10`): [TBC: fill in URL]
-- Text (`SST2`): [TBC: fill in URL]
-- Tabular Data (`Purchase-100`): [TBC: fill in URL]
-- DP Distinguisher (`DP-distinguisher`): [TBC: fill in URL]
+- [Image (CIFAR-10)](https://codalab.lisn.upsaclay.fr/competitions/8551)
+- [Text (SST-2)](https://codalab.lisn.upsaclay.fr/competitions/8554)
+- [Tabular Data (Purchase-100)](https://codalab.lisn.upsaclay.fr/competitions/8553)
+- [DP Distinguisher](https://codalab.lisn.upsaclay.fr/competitions/8552)
 
 Once registered, you will be given URLs from which to download the challenge data.
 
@@ -145,11 +145,11 @@ For any additional queries or suggestions, please contact [mico-competition@micr
 
 ## Contributing
 
-This project welcomes contributions and suggestions.  
+This project welcomes contributions and suggestions.
 Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). 
-Simply follow the instructions provided by the bot. 
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment).
+Simply follow the instructions provided by the bot.
 You will only need to do this once across all repos using our CLA.
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
