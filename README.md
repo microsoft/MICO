@@ -1,8 +1,21 @@
 # MICO
-
+ 
 Welcome to the Microsoft Membership Inference Competition (MICO)!
+
 In this competition, you will evaluate the effectiveness of differentially private model training as a mitigation against white-box membership inference attacks.
 
+* [What is Membership Inference?](#what-is-membership-inference)
+* [What is MICO?](#what-is-mico)
+* [Task Details](#task-details)
+* [Submissions and Scoring](#submissions-and-scoring)
+* [Winner Selection](#winner-selection)
+* [Important Dates](#important-dates)
+* [Terms and Conditions](#terms-and-conditions)
+* [CodaLab Competitions](#codalab-competitions)
+* [Getting Started](#getting-started)
+* [Contact](#contact)
+* [Contributing](#contributing)
+* [Trademarks](#trademarks)
 
 ## What is Membership Inference?
 
@@ -110,6 +123,7 @@ For each task, the winner will be the one achieving the highest average score (`
 
 
 ## Terms and Conditions
+
 - This challenge is subject to the [Microsoft Bounty Terms and Conditions](https://www.microsoft.com/en-us/msrc/bounty-terms).
 
 - Microsoft employees and students/employees of Imperial College London may submit solutions, but are not eligible to receive awards.
@@ -118,15 +132,16 @@ For each task, the winner will be the one achieving the highest average score (`
 
 - Winners may be asked to provide their code and/or a description of their strategy to the judges for verification purposes.
 
+## CodaLab Competitions
 
-## Getting Started
-
-First, register on CodaLab for the tasks in which you would like to participate:
 - [Image (CIFAR-10)](https://codalab.lisn.upsaclay.fr/competitions/8551)
 - [Text (SST-2)](https://codalab.lisn.upsaclay.fr/competitions/8554)
 - [Tabular Data (Purchase-100)](https://codalab.lisn.upsaclay.fr/competitions/8553)
 - [DP Distinguisher](https://codalab.lisn.upsaclay.fr/competitions/8552)
 
+## Getting Started
+
+First, register on CodaLab for the tasks in which you would like to participate.
 Once registered, you will be given URLs from which to download the challenge data.
 
 This repository contains starting kit Jupyter notebooks which will guide you through making your first submission.
