@@ -6,7 +6,6 @@ import torch.nn as nn
 
 from collections import OrderedDict
 from typing import List, Optional, Union, Type, TypeVar
-from torchcsprng import create_mt19937_generator
 from torch.utils.data import Dataset, ConcatDataset, random_split
 
 D = TypeVar("D", bound="ChallengeDataset")
@@ -74,6 +73,7 @@ class ChallengeDataset:
             seed_training (Optional[int]): Seed to select non-challenge training examples.
             seed_membership (Optional[int]): Seed to split challenge examples into members/non-members.
         """
+        from torchcsprng import create_mt19937_generator
 
         challenge_gen = create_mt19937_generator(seed_challenge)
         self.challenge, self.rest = random_split(
