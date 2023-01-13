@@ -118,7 +118,7 @@ For each task, the winner will be the one achieving the highest average score (`
 ## Important Dates
 
 - Submission opens: November 8, 2022
-- Submission closes: **January 12, 2023, 23:59 (Anywhere on Earth)**
+- Submission closes: ~**January 12, 2023, 23:59 (Anywhere on Earth)**~ **January 26, 2023, 23:59 (Anywhere on Earth)**
 - Conference: February 8-10, 2023
 
 
