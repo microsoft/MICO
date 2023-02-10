@@ -63,7 +63,7 @@ We congratulate all participants for taking part in this competition, and we are
 
 Track	         |Winner                 |	Runner-up
 :----------------|:----------------------|:---------------------
-CIFAR-10         | tianjian10 [[solution]](https://github.com/tianjian10/MICO/tree/main/src2) | Anshuman Suri [[solution]](https://www.anshumansuri.me/post/mico/) 
+CIFAR-10         | tianjian10 [[solution]](https://github.com/tianjian10/MICO/tree/main/src2) | Anshuman Suri (iamgroot42) [[solution]](https://www.anshumansuri.me/post/mico/)
 Purchase-100     | tianjian10 [[solution]](https://github.com/tianjian10/MICO/tree/main/src2) | Sarthak Gupta and Pranjal Gulati (mrsarthakgupta) [[solution]](https://github.com/DevPranjal/mico-first-principles)
 SST-2            | tianjian10 [[solution]](https://github.com/tianjian10/MICO/tree/main/src2) | Major Will Fleshman (flesh) [[solution]](https://github.com/wfleshman/MICO_SST)
 DP Distinguisher | tianjian10 [[solution]](https://github.com/tianjian10/MICO/tree/main/src2) | [deserted]
