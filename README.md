@@ -1,5 +1,7 @@
 # MICO
- 
+
+🥇🥈[**Winners Announced!**](https://microsoft.github.io/MICO/) 
+
 Welcome to the Microsoft Membership Inference Competition (MICO)!
 
 In this competition, you will evaluate the effectiveness of differentially private model training as a mitigation against white-box membership inference attacks.
